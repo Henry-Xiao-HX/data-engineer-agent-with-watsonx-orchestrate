@@ -1,0 +1,49 @@
+spec_version: v1
+kind: mcp
+name: wxdi-mcp-toolkit
+description: >
+  IBM watsonx Data Intelligence MCP Server toolkit. Provides tools for data
+  products, data protection rules, data quality, lineage, metadata enrichment,
+  metadata import, projects, search, and text-to-SQL services via the IBM Data
+  Intelligence platform.
+command: uvx ibm-watsonx-data-intelligence-mcp-server --transport stdio
+tools:
+  - data_product_create_or_update_url_data_product
+  - data_product_get_assets_from_container
+  - data_product_create_or_update_from_asset_in_container
+  - data_product_find_delivery_methods_based_on_connection
+  - data_product_add_delivery_methods_to_data_product
+  - data_product_publish_data_product
+  - data_product_search_data_products
+  - data_product_get_data_contract
+  - data_product_get_contract_templates
+  - data_product_attach_contract_template_to_data_product
+  - data_product_create_and_attach_custom_contract
+  - create_data_protection_rule_from_text
+  - create_data_protection_rule
+  - data_protection_rule_search
+  - data_protection_rule_search_governance_artifacts
+  - data_quality_get_data_quality_for_asset
+  - lineage_convert_to_lineage_id
+  - lineage_get_lineage_graph
+  - lineage_search_lineage_assets
+  - create_or_update_metadata_enrichment_asset
+  - execute_metadata_enrichment_asset
+  - execute_metadata_enrichment_asset_for_selected_assets
+  - execute_data_quality_analysis_for_selected_assets
+  - execute_metadata_expansion_for_selected_assets
+  - start_metadata_relationship_analysis
+  - create_metadata_import
+  - list_connection_paths
+  - create_project
+  - add_or_edit_collaborator
+  - search_asset
+  - get_asset_details
+  - search_data_source_definition
+  - list_containers
+  - find_container
+  - search_connection
+  - text_to_sql_create_asset_from_sql_query
+  - text_to_sql_generate_sql_query
+
+# Made with Bob

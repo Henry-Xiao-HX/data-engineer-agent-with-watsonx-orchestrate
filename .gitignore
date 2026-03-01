@@ -1,0 +1,26 @@
+# Environment variables - never commit secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+dist/
+build/
+*.egg-info/
+
+# uv
+.python-version
+
+# Logs
+*.log
+/tmp/
+
+# Export artifacts
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
