@@ -6,18 +6,42 @@ AI agent built with **IBM watsonx Orchestrate** integrating the **IBM watsonx Da
 
 ## Architecture
 
+```mermaid
+graph TB
+    User["👤 User<br/><br/>Natural Language Prompts"]
+    
+    subgraph Orchestrate["🤖 watsonx Orchestrate"]
+        Agent["AI Agent<br/>(data_engineer_agent)<br/><br/>Granite 3 LLM • ReAct Style"]
+        Toolkit["MCP Toolkit<br/>(wxdi-mcp-toolkit)<br/><br/>37 Data Intelligence Tools"]
+    end
+    
+    subgraph MCP["🔌 MCP Server"]
+        Server["watsonx Data Intelligence<br/>MCP Server<br/><br/>stdio transport"]
+    end
+    
+    Platform["☁️ IBM watsonx Data Intelligence<br/><br/>Data Catalog • Governance • Quality<br/>Lineage • Protection • Products"]
+    
+    User -->|Prompt| Agent
+    Agent -->|Tool Selection| Toolkit
+    Toolkit -->|MCP Protocol| Server
+    Server -->|REST API| Platform
+
+    style User fill:#e3f2fd
+    style Orchestrate fill:#fff3e0
+    style MCP fill:#f3e5f5
+    style Platform fill:#e8f5e9
+    style Agent fill:#1976d2,color:#fff
+    style Toolkit fill:#f57c00,color:#fff
+    style Server fill:#7b1fa2,color:#fff
+    style Platform fill:#388e3c,color:#fff
 ```
-User ──► watsonx Orchestrate Agent (data_engineer_agent)
-               │
-               ▼
-     wxdi-mcp-toolkit (MCP, stdio)
-               │  uvx
-               ▼
-   ibm-watsonx-data-intelligence-mcp-server
-               │  HTTPS
-               ▼
-   IBM watsonx Data Intelligence (SaaS / CPD)
-```
+
+**Key Components:**
+
+- **User**: Interacts with natural language prompts for data engineering tasks
+- **watsonx Orchestrate**: Hosts the AI agent with 37 specialized data intelligence tools
+- **MCP Server**: Bridges the agent toolkit to the Data Intelligence platform
+- **watsonx Data Intelligence**: Enterprise data governance and intelligence platform (SaaS/CPD)
 
 ---
 
